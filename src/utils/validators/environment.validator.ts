@@ -5,8 +5,6 @@ import {
   IsBooleanString,
   IsEnum,
   IsNotEmpty,
-  IsOptional,
-  IsString,
   ValidateIf,
   validateSync,
 } from 'class-validator';

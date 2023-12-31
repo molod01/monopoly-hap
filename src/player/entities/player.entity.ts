@@ -1,5 +1,6 @@
-import { Column, Entity, ManyToOne } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany } from 'typeorm';
 import type { Tile } from 'src/tile/entities/tile.entity';
+import type { TurnHistory } from 'src/turn/entities/turn-history.entity';
 import { EntityHelper } from '../../utils/entity-helper';
 
 @Entity()
@@ -22,9 +23,7 @@ export class Player extends EntityHelper {
   @ManyToOne('Tile', 'players')
   tile: Tile;
 
-  // @OneToMany('TurnHistory', 'player')
-  // turnHistory: TurnHistory;
-
-  // @OneToOne('Upgrade', 'tile')
-  // upgrade: Upgrade;
+  @OneToMany('TurnHistory', 'player')
+  @JoinColumn()
+  turnHistory: TurnHistory;
 }
