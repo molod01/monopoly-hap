@@ -24,10 +24,7 @@ import { TurnModule } from './turn/turn.module';
       isGlobal: true,
       envFilePath: ['.env.development.local', '.env.development', '.env'],
       validate,
-      load: [
-        databaseConfig,
-        appConfig,
-      ],
+      load: [databaseConfig, appConfig],
     }),
     LoggerModule.forRootAsync({
       useFactory: (configService: ConfigService) => ({

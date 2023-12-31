@@ -1,6 +1,6 @@
 import { Column, Entity, ManyToOne, OneToMany, OneToOne } from 'typeorm';
-import { EntityHelper } from '../../utils/entity-helper';
 import type { Tile } from 'src/tile/entities/tile.entity';
+import { EntityHelper } from '../../utils/entity-helper';
 
 @Entity()
 export class Player extends EntityHelper {
@@ -13,7 +13,7 @@ export class Player extends EntityHelper {
   @Column('text', { default: undefined, nullable: false })
   color: string;
 
-  @Column({ nullable: false, default: 15000 })
+  @Column({ nullable: false, default: 15_000 })
   balance: number;
 
   @Column({ nullable: false, default: true })

@@ -1,6 +1,6 @@
 import { Column, Entity, ManyToOne, OneToMany, OneToOne } from 'typeorm';
-import { EntityHelper } from '../../utils/entity-helper';
 import type { Player } from 'src/player/entities/player.entity';
+import { EntityHelper } from '../../utils/entity-helper';
 import type { Monopoly } from './monopoly.entity';
 import { MonopolyType } from '../monopoly/monopoly-enums.pb';
 

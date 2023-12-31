@@ -1,7 +1,7 @@
 import { Column, Entity, JoinColumn, OneToMany, OneToOne } from 'typeorm';
-import { EntityHelper } from '../../utils/entity-helper';
 import type { Player } from 'src/player/entities/player.entity';
 import { Company } from 'src/company/entities/company.entity';
+import { EntityHelper } from '../../utils/entity-helper';
 import { TileType } from '../tile-enums.pb';
 
 @Entity()
