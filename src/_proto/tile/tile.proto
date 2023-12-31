@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "tile/tile-enums.proto";
+
+package tile;
+
+service TileService {}
