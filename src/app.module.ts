@@ -9,6 +9,13 @@ import { validate } from './utils/validators/environment.validator';
 import appConfig from './config/app.config';
 import databaseConfig from './config/database.config';
 import { TypeOrmConfigService } from './database/typeorm-config.service';
+import { PlayerModule } from './player/player.module';
+import { CompanyModule } from './company/company.module';
+import { TileService } from './tile/tile.service';
+import { TileController } from './tile/tile.controller';
+import { TileModule } from './tile/tile.module';
+import { TurnController } from './turn/turn.controller';
+import { TurnModule } from './turn/turn.module';
 
 @Module({
   imports: [
@@ -55,8 +62,12 @@ import { TypeOrmConfigService } from './database/typeorm-config.service';
         return new DataSource(options).initialize();
       },
     }),
+    PlayerModule,
+    CompanyModule,
+    TileModule,
+    TurnModule,
   ],
-  controllers: [],
-  providers: [],
+  controllers: [TileController, TurnController],
+  providers: [TileService],
 })
 export class AppModule {}
