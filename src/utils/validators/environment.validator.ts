@@ -92,32 +92,6 @@ class EnvironmentVariables {
   @ValidateIf((o) => o.NODE_ENV === Environment.PRODUCTION)
   @IsNotEmpty()
   LOG_FILE: string;
-
-  @IsString()
-  @IsOptional()
-  XE_BASE_URL: string;
-
-  @IsString()
-  @IsNotEmpty()
-  @ValidateIf((o) => o.XE_BASE_URL)
-  XE_API_ID: string;
-
-  @IsString()
-  @IsNotEmpty()
-  @ValidateIf((o) => o.XE_BASE_URL)
-  XE_API_KEY: string;
-
-  @IsString()
-  @IsNotEmpty()
-  ELASTICSEARCH_NODE: string;
-
-  @IsString()
-  @IsNotEmpty()
-  ELASTICSEARCH_USERNAME: string;
-
-  @IsString()
-  @IsNotEmpty()
-  ELASTICSEARCH_PASSWORD: string;
 }
 
 export function validate(config: Record<string, unknown>) {
